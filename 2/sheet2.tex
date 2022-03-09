@@ -10,13 +10,14 @@
 \usepackage{enumitem}
 \usepackage{pdfpages}
 \usepackage{hyperref}
+\usepackage{subcaption}
 
 
 \linespread{1.25}
 
 \begin{document}
 \begin{titlepage}
-\includegraphics[height=20mm]{images/uzh_logo}\\
+% \includegraphics[height=20mm]{images/uzh_logo}\\
 
 \begin{flushleft}
 
@@ -73,16 +74,35 @@ $\langle R,R,R,R \rangle$ \newpage
 
 \section*{Exercise 2.2}
 
-a) Incorrect. If the algorithm doesn't take into account of states already visited, then it could visit each state an infinite number of times.  \newline
-b) False, it isn't complete but it is useful as it uses less memory, implements an acyclic state space and works faster then BFS.  \\
-c) True, because BFS with uniform cost is complete and optimal.\newline
-d) In uniform-cost search, goal test on the node is performed when it is selcted for expansion. Otherwise the first node generated could be a sub-optimal path. Hence with early goal testing the search is cost optimal.\newline
-e) Correct as it combines the benefits of BFS and DFS and one can limit the depth.\newline
+\begin{enumerate}
+    \item[a)] Incorrect. If the algorithm doesn't take into account of states already visited, then it could visit each state an infinite number of times. 
+    \item[b)] False, it isn't complete but it is useful as it uses less memory, implements an acyclic state space and works faster then BFS.  
+    \item[c)] True, because BFS with uniform cost is complete and optimal.
+    \item[d)] In uniform-cost search, goal test on the node is performed when it is selcted for expansion. Otherwise the first node generated could be a sub-optimal path. Hence with early goal testing the search is cost optimal.
+    \item[e)] Correct as it combines the benefits of BFS and DFS and one can limit the depth.\newline
+\end{enumerate}
 
 \section*{Exercise 2.3}
 
-(a) \newline
-(b) 
+% \begin{figure}[h!]
+%     \centering
+%     \includegraphics[width=.7\textwidth]{sheet02_3a.png}
+% \end{figure}
+
+\begin{figure}[h!]
+    \begin{subfigure}{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{sheet02_3a.png}
+        \caption{}
+    \end{subfigure}
+    \begin{subfigure}{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{sheet02_3b.png}
+        \caption{}
+    \end{subfigure}
+    \caption{(a) Shows the search tree of the breadth first search algorithm, (b) shows the search tree of the depth first search algorithm. The numbers in blue denote the order in which the states are explored.}
+\end{figure}
+
 
 
 

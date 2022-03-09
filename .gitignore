@@ -1,0 +1,7 @@
+# exclude file types
+*.aux
+*.gz
+*.out
+*.log
+*.fls
+*.fdb_latexmk
