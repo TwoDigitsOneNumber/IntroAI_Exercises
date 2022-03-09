@@ -45,13 +45,18 @@ Institut für Informatik
 \newpage
 
 \section*{Exercise 2.1}
-farmer = f, wolf = w, goat = g, cabbage = c \newline \newline
-States:  S = $\langle f, w, g, c \rangle, f, c, g, w \in \{ L, R \}$ ; We can ignore the boat as we assume the boat is always where the farmer's at.\newline
-Initial state: $\langle L, L, L, L \rangle$ \newline
-Goal states: $\langle$ R, R, R, R $\rangle$ ; we find that four states are sink states and therefore don't offer a valid goal states in order to solve the riddle. These are: $\langle L, R, \cdot , R \rangle$, $\langle L, \cdot , R, R \rangle$, $\langle R, \cdot, L, L \rangle$, $\langle R, L, \cdot, L \rangle$ where $\cdot \in \{ L, R \}.$ \\
-Actions: $\{ move$\_$c, move$\_$g, move$\_$w\}$ ;we assume moving each individual item also moves the farmer.  \newline
-Transition model: T: S x A $\to$ S $\cup \{\perp \}$ \\ \\ 
-Note: Farmer is the first position, wolf 2nd, goat 3rd and cabbage 4th \\ \\\hspace*{25mm}%
+farmer = f, wolf = w, goat = g, cabbage = c.\\
+We abstract away all the positions of the boat as the boat is only relevant in combination with the farmer. Also we abstract away the space between the shores, as it is only relevant which "items" are on the left or right shore.
+\begin{itemize}
+    \item States: S = $\langle f, w, g, c \rangle,$ where $f, c, g, w \in \{ L, R \}$ ; We can ignore the boat as we can assume the boat is always where the farmer is. Note: Farmer is the first position, wolf 2nd, goat 3rd and cabbage 4th 
+    \item Initial state: $\langle L, L, L, L \rangle$ 
+    \item Goal state: $\langle R, R, R, R \rangle$ 
+    \item Actions: $\{ move\_c, move\_g, move\_w, move\_f\}$ 
+    \item Transition model: T: S x A $\to$ S $\cup \{\perp \}$; Each action works as follows: A move is characterized by switching the letter of the item that is moved, where we assume that moving each item ($w,g,c$) also moves the farmer $f$ and $move\_f$ only moves the farmer. If the letter initially is a $L$ then it gets turned into a $R$, and vice-versa. E.g. $move\_c(\langle L, L, L, L \rangle) = \langle R, L, L, R \rangle$. we find that four states are sink states and therefore actions leading to one of these end the "game". These are: $\langle L, R, \cdot , R \rangle$, $\langle L, \cdot , R, R \rangle$, $\langle R, \cdot, L, L \rangle$, $\langle R, L, \cdot, L \rangle$, where $\cdot \in \{ L, R \}.$ All actions that get applied on an item $i$ and state $s$ where $f\neq i$ are considered invalid and lead to $\bot$.
+\end{itemize}
+
+Below we show two solution paths:\\
+\hspace*{24mm}
 $\langle L,L,L,L \rangle$ \\ \hspace*{35mm}%
 $ \downarrow$ \\ \hspace*{25mm}%
 $\langle R,L,R,L \rangle$ \\ \hspace*{35mm}%
@@ -62,11 +67,11 @@ $\searrow$ \\
 $\langle R,R,R,L \rangle$ \hspace*{25mm}%
 $\langle R,L,R,R \rangle$ \\ \hspace*{10mm}%
 $\searrow$ \hspace*{40mm}%
-$\swarrow \\ \\ \langle L,R,L,L \rangle$ \hspace*{25mm}%
+$\swarrow \\ \langle L,R,L,L \rangle$ \hspace*{25mm}%
 $\langle L,L,L,R \rangle$ \\ \hspace*{35mm}%
 $\downarrow$ \\ \hspace*{25mm}%
 $\langle R,R,L,R \rangle$ \\ \hspace*{35mm}%
-$\downarrow$ \\ \\ \hspace*{25mm}%
+$\downarrow$ \\ \hspace*{25mm}%
 $\langle L,R,L,R \rangle$ \\ \hspace*{35mm}%
 $\downarrow$ \\ \hspace*{25mm}%
 $\langle R,R,R,R \rangle$ \newpage
