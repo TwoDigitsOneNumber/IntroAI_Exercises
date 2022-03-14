@@ -1,0 +1,91 @@
+\documentclass[12pt]{article}
+\usepackage[paper=a4paper,left=25mm,right=25mm,top=25mm,bottom=25mm]{geometry}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[pdftex]{graphicx}
+\usepackage{tikz-qtree}
+\usepackage{color}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{pdfpages}
+\usepackage{hyperref}
+
+
+\linespread{1.25}
+
+\begin{document}
+\tikzset{every tree node/.style={minimum width=2em,draw,circle},
+         blank/.style={draw=none},
+         edge from parent/.style=
+         {draw,edge from parent path={(\tikzparentnode) -- (\tikzchildnode)}},
+         level distance=1.5cm}
+\begin{titlepage}
+\includegraphics[height=20mm]{images/uzh_logo}\\
+
+\begin{flushleft}
+
+\vspace{2cm}
+
+{\Large Introduction to Artificial Intelligence\\Exercise Sheet 3}\\
+
+\vspace{4cm}
+
+\textbf{Laurin van den Bergh, 16-744-401\\Yufeng Xiao, 19-763-663\\Nora Beringer, 19-734-227}\\
+
+\vspace{2cm}
+
+Universität Zürich\\
+Institut für Informatik
+
+\vfill Due: March 16, 2022
+
+\vspace{3cm}
+
+
+\end{flushleft}
+\end{titlepage}
+
+\newpage
+
+\section*{Exercise 3.1}
+a) The wolf and goat can never be alone on a river bank, as well as the cabbage and goat can never be alone on a river bank. \\
+Initial state: $\langle L, L, L, L \rangle$ \\
+Goal state: $\langle R, R, R, R \rangle$ \\
+Abstract state, satisfies the goal state: On$\langle Wolf, L \rangle \land On \langle Goat, L \rangle \land On \langle Cabbage, L \rangle \land On \langle Farmer, L \rangle \land Cabbage, R \rangle \land \langle Wolf, R \rangle \land On \langle Farmer, R \rangle \land On \langle Goat, R \rangle$\\
+The goal state is reached in at least three steps. We ignored states which will lead to a sink state. The result is informative in the way that we know that reaching the goal state can be achieved in at least three steps. \\
+b) It is admissible as it doesn't overestimate the cost of reaching the goal state as the lowest possible cost from the initial state is at least three steps. \\Side note: If the heuristic is admissible, then it is safe and goal-aware. \newline
+c) It is consistent as the estimated cost of reaching the goal from the initial state is no greater than the step cost of getting to the successor action (crossing the river) plus the estimated cost (at least three steps) of reaching the goal state from the initial state.\\Side note: If the heuristic is goal-aware and consistent, then it is admissible. \newline
+
+
+
+\section*{Exercise 3.2}
+
+a) Initial state = head node: Basel \\
+Following states with least cost, if we think ahead and don't look at it step by step (ordered): Baden, Zürich, Zug; total cost = 126 \\ \\
+\begin{tikzpicture}
+\Tree
+[.Basel     
+    [.Olten ]
+    [.Baden 
+    \edge[blank]; \node[blank]{};
+    \edge[]; [.Zürich
+             \edge[blank]; \node[blank]{};
+             \edge[]; {Zug}
+         ]
+    ]
+]
+\end{tikzpicture} \\
+b)   \\
+c) \newline
+
+
+\section*{Exercise 3.3}
+
+Programming
+
+
+
+
+\end{document}
