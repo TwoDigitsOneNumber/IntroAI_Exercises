@@ -4,7 +4,7 @@ from contextlib import contextmanager
 from depth_first_search import DepthFirstSearch
 from pancake_problem import PancakeProblem
 import signal
-from weighted_astar_search_laurin import WeightedAStarSearch
+from weighted_astar_search import WeightedAStarSearch
 import numpy as np
 import pandas as pd
 
@@ -40,10 +40,10 @@ def run_uninformed_searches(problem, i):
   algo_name, cost, total_time, expanded, generated = dfs.run()
 
   # store data in arrays
-  costs[i, 0]
-  total_times[i, 0]
-  expanded_states[i, 0]
-  generated_states[i, 0]
+  costs[i, 0] = cost
+  total_times[i, 0] = total_time
+  expanded_states[i, 0] = expanded
+  generated_states[i, 0] = generated
   columns[0] = algo_name
 
   print("\nBreadth-first search:")

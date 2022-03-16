@@ -87,8 +87,40 @@ c) The heuristic is admissible, and thus also safe and goal-aware, and consisten
 
 \section*{Exercise 3.3}
 
-Programming
 
+\begin{figure}
+    \centering
+    \begin{subfigure}[]{.49\textwidth}
+        \includegraphics[width=\textwidth]{figures/costs.png}
+        \caption{}
+    \end{subfigure}
+    \begin{subfigure}[]{.49\textwidth}
+        \includegraphics[width=\textwidth]{figures/total_times.png}
+        \caption{}
+    \end{subfigure}
+    \begin{subfigure}[]{.49\textwidth}
+        \includegraphics[width=\textwidth]{figures/expanded_states.png}
+        \caption{}
+    \end{subfigure}
+    \begin{subfigure}[]{.49\textwidth}
+        \includegraphics[width=\textwidth]{figures/generated_states.png}
+        \caption{}
+    \end{subfigure}
+    \caption{The vertical line separates the simple problems (left) from the hard problems (right).}
+    \label{3.3}
+\end{figure}
+
+b) We can clearly see (Figure \ref{3.4}) that the plan costs increase in the problem size for all algorithms, which is to be expected. Also we see that for small problems, the differences between the algorithms is almost 0. Note that for the plots in Figure \ref{3.3} the y axes are logarithmic, to reduce the effect of the A* algorithm, and depth-first search for the cost, which generally has lot higher values. Further, we see that the costs for weighted A* increase as the weight increases. This makes sense as A* guarantees the optimal cost and the further we increase the weight, the guaranteed upper bound on the cost increases, however speed decreases dramatically for these algorithms. Also we can se that breath-first search and A* expand a lot more states than the other algorithms, this of course correlates with the runtime of the algorithms. We get a similar picture for the generated states, with the difference that, of course, all have a larger scale and breadth-first search comparatively generates less states than the other algorithms.
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.6\textwidth]{figures/generated_states_without_dfs.png}
+    \caption{}
+    \label{3.4}
+\end{figure}
+
+Note that we edited the files "search.py" and "experiment.py" alongside "weighted\_astar\_search.py" in order to allow us to make some plots. Therefore we also added the file "plots.py". 
 
 
 

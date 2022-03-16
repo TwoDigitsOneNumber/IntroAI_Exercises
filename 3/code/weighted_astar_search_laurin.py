@@ -39,6 +39,7 @@ class WeightedAStarSearch(Search):
     frontier = PriorityQueue()
     f_of_initial_state = 0 + self.w * p.h(p.initial_state)
     frontier.put( (f_of_initial_state, ComparableSearchNode(p.initial_state, None, 0)) )
+    self.generated += 1
 
     # initialize reached set as dictionary (key: state, value: node), and add initial state
     reached = {p.initial_state: SearchNode(p.initial_state, None, 0)}
@@ -46,6 +47,7 @@ class WeightedAStarSearch(Search):
     # iterate over frontier
     while not frontier.empty():
       f_node, node = frontier.get()
+      self.expanded +=1
 
       # if goal is found, return the node associated with the goal state
       if p.is_goal(node.state):
@@ -62,6 +64,7 @@ class WeightedAStarSearch(Search):
           reached[s_prime] = child
           f_of_child = child.g + self.w * p.h(child.state)
           frontier.put( (f_of_child, child) )
+          self.generated += 1
     
     # if this part of the code is reached, then no solution was found, i.e. no solution exists
     print("Explored entire search problem, no solution exists.")
