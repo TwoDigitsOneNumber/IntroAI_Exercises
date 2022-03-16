@@ -11,6 +11,8 @@
 \usepackage{enumitem}
 \usepackage{pdfpages}
 \usepackage{hyperref}
+\usepackage{subcaption}
+\usepackage{aligned-overset}
 
 
 \linespread{1.25}
@@ -22,7 +24,7 @@
          {draw,edge from parent path={(\tikzparentnode) -- (\tikzchildnode)}},
          level distance=1.5cm}
 \begin{titlepage}
-\includegraphics[height=20mm]{images/uzh_logo}\\
+\includegraphics[height=20mm]{../images/uzh_logo}\\
 
 \begin{flushleft}
 
@@ -54,16 +56,33 @@ a) The wolf and goat can never be alone on a river bank, as well as the cabbage 
 Initial state: $\langle L, L, L, L \rangle$ \\
 Goal state: $\langle R, R, R, R \rangle$ \\
 The goal state is reached in at least three steps, as wolf, goat and cabbage need to be placed separately on the goal river bank. We ignored states which will lead to a sink state. The result is informative in the way that we know that reaching the goal state can be achieved in at least three steps. \\
-b) It is admissible as it doesn't overestimate the cost of reaching the goal state as the lowest possible cost from the initial state is at least three steps. Our heuristic counts the number of items on the left river bank. To reach a goal state each item has to be moved to the right river bank. Therefore our heuristic provides a lower bound on the number of necessary moves. \\Side note: If the heuristic is admissible, then it is safe and goal-aware. \newline
-c) It is consistent as the estimated cost of reaching the goal from the initial state is no greater than the step cost of getting to the successor state (crossing the river) plus the estimated cost (at least three steps) of reaching the goal state from the initial state. \\ As the action of crossing the river only decreases the items which are left behind on the left river side only by one during each move, it never goes down below the estimated lower bound of at least 3 moves. \\Side note: If the heuristic is goal-aware and consistent, then it is admissible. \newline
+Our heuristic counts the number of items on the left river bank. \\
+b) It is admissible as it doesn't overestimate the cost of reaching the goal state as the lowest possible cost from the initial state is at least three and the highest heuristic value we can achieve is 3. To reach a goal state each item has to be moved to the right river bank. Therefore our heuristic provides a lower bound on the number of necessary moves. \\Side note: If the heuristic is admissible, then it is safe and goal-aware. \newline
+c) It is consistent as the drop in the heuristic value is at maximum 1, $h(s) - h(s') \leq 1$ for any two states $s, s'$, because only one of the items can be transported from the left to the right shore at a time. The action cost is constant 1, $cost(a) = 1$ for every action $a$. Therefore $h(s) \leq h(s')$ and $h(s) \leq h(s') + cost(a)$ for all transitions $s \overset{a}{\rightarrow} s'$.
+% c) It is consistent as $h(s)$ of reaching the goal from the initial state is no greater than the step cost of getting to the successor state (crossing the river) plus the estimated cost (at least three steps) of reaching the goal state from the initial state. \\ As the action of crossing the river only decreases the items which are left behind on the left river side only by one during each move, it never goes down below the estimated lower bound of at least 3 moves. \\Side note: If the heuristic is goal-aware and consistent, then it is admissible. \newline
 
 
 
 \section*{Exercise 3.2}
 
-a) Initial state = head node: Basel \\
-b)   \\
-c) \newline
+\begin{figure}[h!]
+    \begin{subfigure}[t]{\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/3.2a.png}
+        \caption{}
+    \end{subfigure}
+    \begin{subfigure}[t]{\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/3.2b.png}
+        \caption{}
+    \end{subfigure}
+    \caption{}
+    \label{3.2}
+\end{figure}
+
+a) and b) see Figure \ref{3.2}.
+
+c) The heuristic is admissible, and thus also safe and goal-aware, and consistent, therefore we know that A* and greedy best first search will find the optimal solution even if no reopening is used. It is also to be expected, that uses fewer steps than A* (4 vs. 6) as it is known to be very fast.
 
 
 \section*{Exercise 3.3}
