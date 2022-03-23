@@ -23,7 +23,7 @@
          {draw,edge from parent path={(\tikzparentnode) -- (\tikzchildnode)}},
          level distance=1.5cm}
 \begin{titlepage}
-\includegraphics[height=20mm]{../images/uzh_logo}\\
+\includegraphics[height=20mm]{images/uzh_logo}\\
 
 \begin{flushleft}
 
@@ -102,15 +102,24 @@ Therefore we have found a 3-path connection linking dom(x), dom(y) and dom(z) to
 
 
 a) Please consider the graph for detailed understanding:\\ \\
+\includegraphics[height=10cm]{images/4.3a}\\
 b) Variable and value ordering: V7=r, V3=b, V4=b, V1=g, V2=b, V5=g, V6=r/y\\
 Please consider the graph for detailed understanding:\\ \\
+Note: In the graph down below the line between node E: and F: is to be considered as connected. The picture was too big and we had to split it up in order to fit it into the document, therefore it looks disconnected but is meant to be connected.\\
+\includegraphics[height=10cm]{images/4.3b_1}\\
+\includegraphics[height=10cm]{images/4.3b_2}\\
 The search in b) is faster as the heuristic avoids pointless searches and therefore we don't need to do as much back-tracking as in a).\\ \\
 c) If we pick the variable which is most likely to fail soon then the failure will be detected immediately which therefore avoids pointless searches through other variables and on average have fewer sucessful assignments to backtrack over. The least-constraining value prefers the value that rules out the fewest choices for neighboring variables in the constriant graph. Therefore it leaves the maximum flexibility in order to assign following variables.\\
 
 \section*{Exercise 4.4}
 
 
-a) No solution can be found for this inconsistent graph, as we end up with an empty set for either node v1 or for node v3. Please consider the graph for detailed understanding:\\ \\
+a) No solution can be found for this inconsistent graph.\\
+We choose v2 as our starting node, as it is the node with the minimum remaining values due to having 3 constraints, while v1, v3 and v4 all have less then 3 constraints.\\
+When updating the domains for the nodes we end up twice with an empty set, once for v1 and once for v3.\\
+As we have no more nodes left for backtracking, we can not find a solution which would solve the CSP problem.\\ 
+Please consider the graph for detailed understanding:\\ \\
+\includegraphics[height=10cm]{images/4.4a}\\
 b) Following the pseudocode on page 171 from the Book Artificial Intelligence - A Modern Approach we get the following result: \\
 queue = \{(v1, v2), (v1, v3), (v2, v1), (v2, v4), (v2, v3), (v3, v1), (v3, v2), (v4,v2)\}\\
 In the first iteration of the while loop we set X$_{i}$ = v1 and X$_{j}$ = v2, meaning that we check the arc-consistency of (v1, v2).\\
