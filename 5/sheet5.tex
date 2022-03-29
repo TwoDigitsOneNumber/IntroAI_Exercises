@@ -23,7 +23,7 @@
          {draw,edge from parent path={(\tikzparentnode) -- (\tikzchildnode)}},
          level distance=1.5cm}
 \begin{titlepage}
-\includegraphics[height=20mm]{images/uzh_logo}\\
+\includegraphics[height=20mm]{../images/uzh_logo}\\
 
 \begin{flushleft}
 
@@ -52,6 +52,7 @@ Institut für Informatik
 
 \section*{Exercise 5.1}
 a) Consider the game tree down below: \\
+\includegraphics[width=\textwidth]{figures/5.1a_b.png}\\
 b) The root value will be 1 as shown in the graph above. Hence MAX has a winning strategy as the value of the root value corresponds to the winning state for MAX which is 1. \\
 The strategy is as follows: If the first player takes exactly two coins out of the stack during the players first move, then the player will win the game.\\
 c) The player who starts has a winning strategy only if the player takes out exactly three coins from Stack 1 during the first move. There is also the possibility to win if Player 1 takes one coin as its first move from Stack 1.\\ 
@@ -65,7 +66,7 @@ For example: Player 1 takes 1 coin from Stack 1, Player 2 takes 1 coin from Stac
 
 \section*{Exercise 5.2}
 Consider the Tree down below: \\
-
+\includegraphics[width=\textwidth]{figures/5.2.png}\\
 
 \section*{Exercise 5.3}
 \textbf{1.Iteration:} Tree is not yet expanded, hence we don't yet have a MAX or MIN successor to choose. Therefore we start expanding the tree from the root node. \\
@@ -83,6 +84,6 @@ As the root node is MAX we choose the node with the highest utility, which is th
 We update the value of the righthand root child to 14 + (12-14)/4 = 13.5 and the root value to 12 +(12-12)/4 = 12.\\
 Tree after 4th Iteration:\\ \\
 Consider the full Tree below: \\
-
+\includegraphics[width=\textwidth]{figures/5.3.png}\\
 
 \end{document}
