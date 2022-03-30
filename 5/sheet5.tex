@@ -72,17 +72,17 @@ Consider the Tree down below: \\
 \textbf{1.Iteration:} Tree is not yet expanded, hence we don't yet have a MAX or MIN successor to choose. Therefore we start expanding the tree from the root node. \\
 We choose the unexpanded left child and then follow through to the right child by default policy. We reach utility node 16.\\
 We update the value of the lefthand child of the root to 16 and the root to 16.\\
-Tree after 1st Iteration:\\
+\\
 \textbf{2.Iteration:} We pick the second child of the root (righthand child) as this child is not expanded yet and therefore we still can't choose the successor for our root node. \\ 
 We follow by default policy to the right until we reach utility node 14. We update the roots' righthand child to 14. We update the root value as following 16 + (14-16)/2 = 15.\\
-Tree after 2nd Iteration:\\
+\\
 \textbf{3.Iteration:} We now can choose the sucessor for our root node as it has two expanded children. As the root node is MAX we choose the node with the highest utility, which is the node to the left with value 16. From there we have no expanded nodes. Therefore we pick the unexpanded left child and follow to the right by default policy until utility node 6.\\
 We update the value of the lefthand root child to 16 + (6-16)/3 = 38/3 and the root value to 15 +(6-15)/3 = 12.\\
-Tree after 3rd Iteration:\\
+\\
 \textbf{4.Iteration:} The root node still has two expanded children but the root and lefthand side were updated with different values, therefore we again have to choose the successor for our root node.\\
 As the root node is MAX we choose the node with the highest utility, which is the node to the right with value 14. From there we have no expanded nodes. We pick the unexpanded left child and follow to the right by default policy until utility node 12.\\
 We update the value of the righthand root child to 14 + (12-14)/4 = 13.5 and the root value to 12 +(12-12)/4 = 12.\\
-Tree after 4th Iteration:\\ \\
+\\ \\
 Consider the full Tree below: \\
 \includegraphics[width=\textwidth]{figures/5.3.png}\\
 
