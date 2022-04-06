@@ -23,7 +23,7 @@
          {draw,edge from parent path={(\tikzparentnode) -- (\tikzchildnode)}},
          level distance=1.5cm}
 \begin{titlepage}
-\includegraphics[height=20mm]{images/uzh_logo}\\
+% \includegraphics[height=20mm]{images/uzh_logo}\\
 
 \begin{flushleft}
 
@@ -67,12 +67,17 @@ Because the sentence $\varphi$ is satisfiable and not valid it is falsifiable.
 
 \section*{Exercise 6.2}
 a)\\
-$\varphi \vDash \psi$\\
-$\psi = C \land \neq D, \neq \psi \equiv \neq C \lor D$\\
-Test if $\varphi \to \psi$ is a tautology,\\
-equivalently: test if $\psi \cup \{\neq \psi \}$ is unsatisfiable =: $\Delta$, where $\Delta$ is in CNF.\\
-Consider the Resolution steps down below:\\ \\
-b) We used 9 steps. A truth table for the same sentence would have 2$^6$ rows as the number of variables (A, B, C, D, E, F) is equal to 6. Therefore we need less steps for the Resolution in comparison tho building the truth table.\\
+We want to find out if $\varphi \vDash \psi$ holds, where $\psi = C \land \neq D, \neq \psi \equiv \neq C \lor D$.\\
+To determine this, we test if $\varphi \to \psi$ is a tautology,\\
+equivalently: We can test if $\psi \cup \{\neq \psi \} =: \Delta$ is unsatisfiable, where $\Delta$ is a set of clauses.\\
+Consider the Resolution steps down below:
+
+\includegraphics[width=\textwidth]{figures/6.2a.png}
+We conclude that $\Delta$ is unsatisfiable and therefore $\varphi \vDash \psi$ holds.
+
+
+
+b) We used 9 steps. A truth table for the same sentence would have 2$^6$ rows as the number of variables (A, B, C, D, E, F) is equal to 6. The number of rows of the truth table grows exponentially in the number of variables. Therefore we need less steps for the Resolution in comparison tho building the truth table.\\
 
 
 \section*{Exercise 6.3}
