@@ -23,7 +23,7 @@
          {draw,edge from parent path={(\tikzparentnode) -- (\tikzchildnode)}},
          level distance=1.5cm}
 \begin{titlepage}
-\includegraphics[height=20mm]{images/uzh_logo}\\
+\includegraphics[height=20mm]{../images/uzh_logo}\\
 
 \begin{flushleft}
 
@@ -67,22 +67,23 @@ Because the sentence $\varphi$ is satisfiable and not valid it is falsifiable.
 
 \section*{Exercise 6.2}
 a)\\
-$\varphi \vDash \psi$\\
-$\psi = C \land \neq D, \neq \psi \equiv \neq C \lor D$\\
-Test if $\varphi \to \psi$ is a tautology,\\
-equivalently: test if $\psi \cup \{\neq \psi \}$ is unsatisfiable =: $\Delta$, where $\Delta$ is in CNF.\\
-Consider the Resolution steps down below:\\ \\
-\includegraphics[height=90mm]{images/6.2a}\\
+We want to find out if $\varphi \vDash \psi$ holds, where $\psi = C \land \neq D, \neq \psi \equiv \neq C \lor D$\\
+To determine this, we can test if $\varphi \to \psi$ is a tautology,\\
+equivalently: test if $\psi \cup \{\neq \psi \} =: \Delta$ is unsatisfiable, where $\Delta$ is a set of clauses.\\
+Consider the Resolution steps down below:\\
+\includegraphics[width=\textwidth]{figures/6.2a}\\
+We conclude that $\Delta$ is unsatisfiable and therefore $\varphi \vDash \psi$ holds.
+
 b) We used 9 steps. A truth table for the same sentence would have 2$^6$ rows as the number of variables (A, B, C, D, E, F) is equal to 6. Therefore we need less steps for the Resolution in comparison tho building the truth table.\\
 
 
 \section*{Exercise 6.3}
 a)\\
-\includegraphics[height=100mm]{images/6.3a}\\
+\includegraphics[height=100mm]{figures/6.3}\\
 
 \section*{Exercise 6.4}
 a) As we didn't find a pure symbol or unit clause heuristic we choose to split on A, while assigning True first for splitting. We then break ties in alphabetical order.\\
-Leading to the following recursive structure of 1a):\\\includegraphics[height=100mm]{images/6.4}\\
+Leading to the following recursive structure of 1a):\\\includegraphics[height=100mm]{figures/6.4}\\
 b) The variable order doesn't influence the DPLL execution in this example. Whichever variable we choose for splitting, while afterwards picking True first, will lead to the same amount of steps as demonstrated in 6.4 a)\\
 c) When we take the variable order used in 6.4 a) and pick False first we still have the same amount of steps until the DPLL terminates. Hence the Termination will be reached at the same speed. This is because after the first Iteration where we split on Variable A, where A $\to$ F, we end up with a the unsatisfied clauses where we have to choose the unit clause heuristic for B next, where B $\to$ T. Afterwards the order will be the same as in a) if we follow the breaking of ties in alphabetical order. We have provided the recursive structure as well under 6.4a) 1b).\\
 
