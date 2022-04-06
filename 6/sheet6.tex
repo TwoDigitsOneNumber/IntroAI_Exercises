@@ -79,8 +79,9 @@ b) We used 9 steps. A truth table for the same sentence would have 2$^6$ rows as
 a) \\
 
 \section*{Exercise 6.4}
-a) \\
-b) \\
-c) \\
+a) As we didn't find a pure symbol or unit clause heuristic we choose to split on A, while assigning True first for splitting. We then break ties in alphabetical order.\\
+Leading to the following recursive structure:\\ \\
+b) The variable order doesn't influence the DPLL execution in this example. Whichever variable we choose for splitting, while afterwards picking True first, will lead to the same amount of steps as demonstrated in 6.4 a)\\
+c) When we take the variable order used in 6.4 a) and pick False first we still have the same amount of steps until the DPLL terminates. Hence the Termination will be reached at the same speed. This is because after the first Iteration where we split on Variable A, where A $\to$ F, we end up with a the unsatisfied clauses where we have to choose the unit clause heuristic for B next, where B $\to$ T. Afterwards the order will be the same as in a) if we follow the breaking of ties in alphabetical order. We have provided the recursive structure as well under a).\\
 
 \end{document}
