@@ -1,0 +1,89 @@
+\documentclass[12pt]{article}
+\usepackage[paper=a4paper,left=25mm,right=25mm,top=25mm,bottom=25mm]{geometry}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[pdftex]{graphicx}
+\usepackage{color}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{pdfpages}
+\usepackage{hyperref}
+
+
+\linespread{1.25}
+
+\begin{document}
+\begin{titlepage}
+\includegraphics[height=20mm]{../images/uzh_logo}\\
+
+\begin{flushleft}
+
+\vspace{2cm}
+
+{\Large Introduction to Artificial Intelligence\\Exercise Sheet 1}\\
+
+\vspace{4cm}
+
+\textbf{Laurin van den Bergh, 16-744-401\\Yufeng Xiao, 19-763-663\\Nora Beringer, 19-734-227}\\
+
+\vspace{2cm}
+
+Universität Zürich\\
+Institut für Informatik
+
+\vfill Due: April 27, 2022
+
+\vspace{3cm}
+
+
+\end{flushleft}
+\end{titlepage}
+
+\newpage
+
+\section*{Exercise 7.1}
+
+\textbf{(a)} Predicates: Properties of objects that we are interested in; can be true or false:\\
+$\forall$ b $\in$ SetOfBridges B, where SetOfBridges B = $\{$Krämerbrücke, Schmiedbrücke, Honigbrücke, Holzbrücke, Grüne Brücke, Köttelbrücke, Hohe Brücke$\}$\\
+V = $\{$crossedAtLeastOnce(b)$\mid \forall b \in B \}$ $\cup$ $\{$crossedAtMostOnce(b) $\mid \forall b \in B\}$\\\\
+\textbf{(b)} Initial state (only predicates which are true are listed):\\
+I = crossedAtMostOnce(b), $\forall b \in B$\\\\
+\textbf{(c)} Goal state (both predicates have to be true in order to ensure that each Bridge is crossed exactly once):\\
+G = crossedAtLeastOnce(b) $\land$ crossedAtMostOnce(b), $\forall b \in B$\\\\
+\textbf{(d)} A is a finite set of actions a = $\langle$pre, eff$\rangle$ with pre(a) and eff(a)\\
+A = $\{$crossFirstTime(b), crossAgain(b)$\}$, $\forall b \in B$\\\\
+action a crossFirstTime(b):\\
+pre(crossFirstTime(b)) = $\neg$ crossedAtLeastOnce(b) $\land$ crossedAtMostOnce(b)\\
+eff(crossFirstTime(b)) = crossedAtLeastOnce(b) $\land$ crossedAtMostOnce(b)\\
+When the action crossFirstTime(b) is executed exactly once for every bridge the Goal state is reached.\\\\
+action crossAgain(b):\\
+pre(crossAgain(b)) = crossedAtLeastOnce(b)\\
+eff(crossAgain(b)) = crossedAtLeastOnce(b)\\
+We can ignore crossedAtMostOnce in the action crossAgain(b) as its state is\\
+\emph{crossedAtMostOnce $\to$ false} when crossing the same bridge numerous times.\\
+The Goal state won't be reached when action crossAgain(b) is used.\pagebreak
+
+\section*{Exercise 7.2}
+
+\textbf{(a)} \emph{Insert graph}\\
+\textbf{(b)} \emph{Insert graph}\\
+\textbf{(c)} PDB:\\
+$\{$ loc $\to$ B, treasure $\to \bot \} = \infty$\\
+$\{$ loc $\to$ A, treasure $\to \bot \} = \infty$\\
+$\{$ loc $\to$ C, treasure $\to \bot \} = \infty$\\
+$\{$ loc $\to$ A, treasure $\to \top \} = 2$\\
+$\{$ loc $\to$ B, treasure $\to \top \} = 1$\\
+$\{$ loc $\to$ C, treasure $\to \top \} = 0$\\
+
+\section*{Exercise 7.3}
+
+\textbf{(a)}
+\textbf{(b)} 
+\textbf{(c)} 
+\textbf{(d)}
+
+
+
+\end{document}
