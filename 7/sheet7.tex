@@ -46,12 +46,12 @@ Institut für Informatik
 \section*{Exercise 7.1}
 
 \textbf{(a)} Predicates: Properties of objects that we are interested in; can be true or false:\\
-$\forall$ b $\in$ SetOfBridges B, where SetOfBridges B = $\{$Krämerbrücke, Schmiedbrücke, Honigbrücke, Holzbrücke, Grüne Brücke, Köttelbrücke, Hohe Brücke$\}$\\
+Let B = $\{$Krämerbrücke, Schmiedbrücke, Honigbrücke, Holzbrücke, Grüne Brücke, Köttelbrücke, Hohe Brücke$\}$ be the set of bridges.\\
 V = $\{$crossedAtLeastOnce(b)$\mid \forall b \in B \}$ $\cup$ $\{$crossedAtMostOnce(b) $\mid \forall b \in B\}$\\\\
-\textbf{(b)} Initial state (only predicates which are true are listed):\\
-I = crossedAtMostOnce(b), $\forall b \in B$\\\\
+\textbf{(b)} Initial state (only predicates which are true are listed, because of closed-world assumption):\\
+I = $\bigwedge_{b\in B} \textrm{crossedAtMostOnce(b)}, \forall b \in B$\\\\
 \textbf{(c)} Goal state (both predicates have to be true in order to ensure that each Bridge is crossed exactly once):\\
-G = crossedAtLeastOnce(b) $\land$ crossedAtMostOnce(b), $\forall b \in B$\\\\
+G = $\bigwedge_{b\in B} \left(\textrm{crossedAtLeastOnce(b)} \land \textrm{crossedAtMostOnce(b)} \right), \forall b \in B$\\\\
 \textbf{(d)} A is a finite set of actions a = $\langle$pre, eff$\rangle$ with pre(a) and eff(a)\\
 A = $\{$crossFirstTime(b), crossAgain(b)$\}$, $\forall b \in B$\\\\
 action a crossFirstTime(b):\\
@@ -61,14 +61,13 @@ When the action crossFirstTime(b) is executed exactly once for every bridge the 
 action crossAgain(b):\\
 pre(crossAgain(b)) = crossedAtLeastOnce(b)\\
 eff(crossAgain(b)) = crossedAtLeastOnce(b)\\
-We can ignore crossedAtMostOnce in the action crossAgain(b) as its state is\\
-\emph{crossedAtMostOnce $\to$ false} when crossing the same bridge numerous times.\\
+We can ignore crossedAtMostOnce in the action crossAgain(b) as its state is irrelevant for this action, i.e. \emph{crossedAtMostOnce $\to$ false} when crossing the same bridge numerous times.\\
 The Goal state won't be reached when action crossAgain(b) is used.\pagebreak
 
 \section*{Exercise 7.2}
 
-\textbf{(a)} \emph{Insert graph}\\
-\textbf{(b)} \emph{Insert graph}\\
+\textbf{(a)} \textcolor{red}{\emph{Insert graph}}\\
+\textbf{(b)} \textcolor{red}{\emph{Insert graph}}\\
 \textbf{(c)} PDB:\\
 $\{$ loc $\to$ B, treasure $\to \bot \} = \infty$\\
 $\{$ loc $\to$ A, treasure $\to \bot \} = \infty$\\
@@ -80,9 +79,13 @@ $\{$ loc $\to$ C, treasure $\to \top \} = 0$\\
 \section*{Exercise 7.3}
 
 \textbf{(a)}
+\includegraphics[width=\textwidth]{figures/7.3a.png}\\
 \textbf{(b)} 
+\includegraphics[width=.6\textwidth]{figures/7.3b.png}\\
 \textbf{(c)} 
+\includegraphics[width=.6\textwidth]{figures/7.3c.png}\\
 \textbf{(d)}
+\includegraphics[width=.6\textwidth]{figures/7.3d.png}\\
 
 
 
