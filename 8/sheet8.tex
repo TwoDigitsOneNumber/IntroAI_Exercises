@@ -45,14 +45,17 @@ Institut für Informatik
 
 \section*{Exercise 8.1}
 
-\textbf{(a)}\\
-\textbf{(b)}\\
-\textbf{(c)}
+\textbf{(a)} $\mathbb{P}$(c = fake) = 1$\div n$\\
+\textbf{(b)} We assume that the event is dependent of getting k heads and the fake coin.\\
+$\mathbb{P}$(c = fake $\mid$ k heads) = $\frac{\mathbb{P}(k heads \mid c = fake) * \mathbb{P}(c = fake)}{\mathbb{P}(k heads)}$ = $\frac{\frac{1}{n}}{\frac{1}{n} + \frac{n-1}{n} * (\frac{1}{2})^{k}}$\\
+\textbf{(c)} $\mathbb{P}(c = normal \mid k heads)$ = $\frac{\mathbb{P}(k heads \mid c = normal) * \mathbb{P}(c = normal)}{\mathbb{P}(k heads)}$ = $\frac{(\frac{1}{2})^{k} * \frac{n-1}{n}}{\frac{1}{n} * 1 + \frac{n-1}{n} * (\frac{1}{2})^{k}}$ = $\frac{(\frac{1}{2})^{k} * (n-1)}{1+(\frac{1}{2})^{k}*(n-1)}$ = $\frac{1}{1+\frac{1}{(\frac{1}{2})^{k}*(n-1)}}$
 
 \section*{Exercise 8.2}
 
-\textbf{(a)}\\
-\textbf{(b)}
+\textbf{(a)} $\mathbb{P}$(positive result $\mid$ Test A = positive) = $\frac{\mathbb{P}(Test A = positive  \mid positive result) * \mathbb{P}(positive result)}{\mathbb{P}(Test A = positive)}$ = $\frac{0.95*0.01}{0.01*0.95 + 0.99*0.01}$ = $\frac{0.095}{0.095+0.099}$ = 0.0876\\
+$\mathbb{P}$(positive result $\mid$ Test B = positive) = $\frac{\mathbb{P}(Test B = positive \mid positive)* \mathbb{P}(positive)}{\mathbb{P}(Test B = positive)}$ = $\frac{0.9*0.01}{0.9*0.01+0.99*0.05}$ = $\frac{0.009}{0.009+0.0495}$ = 0.155\\
+\textbf{(b)} $\mathbb{P}$(positive result $\mid$ Test A = positive) = $\frac{\mathbb{P}(Test A = positive  \mid positive result) * \mathbb{P}(positive result)}{\mathbb{P}(Test A = positive)}$ = $\frac{0.95*0.3}{0.3*0.95 + 0.7*0.1}$ = 0.802\\
+$\mathbb{P}$(positive result $\mid$ Test B = positive) = $\frac{\mathbb{P}(Test B = positive \mid positive)* \mathbb{P}(positive)}{\mathbb{P}(Test B = positive)}$ = $\frac{0.9*0.3}{0.9*0.3+0.7*0.05}$ = 0.885\\
 
 \section*{Exercise 8.3}
 
