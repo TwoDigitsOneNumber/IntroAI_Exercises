@@ -60,9 +60,25 @@ T(s$_{j}$, a, 0.5(s$_{j}$-a)) = 0.1\\\\
 \textbf{b)} If we increase the discount factor $\gamma$ the decay will be slower for future rewards. Meaning we value future rewards more in comparison to before we increased the discount factor.\\The optimal policy changes in the regard that we sell less now and keep more N for reproduction.
 
 \section*{Exercise 9.2}
+\begin{tabular}[h]{c|c|c|c|c}
+i & V$^{i}$(S$_{0}$) & V$^{i}$(S$_{1}$) & V$^{i}$(S$_{2}$) & V$^{i}$(S$_{3}$)\\
+\hline
+0 & 10 & 0 & 0 & 0\\
+\hline
+1 & 0 & 7 & 14 & 19\\
+\hline
+2 & 6.3 & 8.4 & 5.7 & 10\\
+\hline
+3 & 7.56 & 6.5 & 10.67 & 15.67\\
+\hline
+4 & 5.85 & 8.73 & 11.8 & 16.8\\
+\hline
+5 & 7.86 & 8.84 & 10.27 & 15.27\\
+\end{tabular}\\\\
+Like policy evaluation, value iteration formally requires an infinte numbers of iterations to converge to an exact result. We stop the iteration once the value function changes by only a small amount in a sweep. The changes do get smaller but some more iterations would be needed in order to clarify if there are still big changes coming or not.\pagebreak\\
+\textbf{Policy evaluation:}\\
+\includegraphics[scale=0.3]{9_3}
 
-
-\section*{Exercise 9.3}
 
 
 
