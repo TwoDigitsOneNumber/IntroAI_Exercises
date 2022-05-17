@@ -44,9 +44,32 @@ Institut für Informatik
 \newpage
 
 \section*{Exercise 10.1}
-
+\emph{General Learning Model:} Learning can be accomplished using a number of different methods, such as by memorization facts, by being told, or by studying examples like problem solution.\\\\
+\emph{Percepts:} Studying face movements of humans in their surroundings, listening to sounds\\\\
+\emph{Actions:} Copying/imitating the sounds they hear.\\\\
+\emph{Types of learning:} Memorizing how sounds sound by watching the mouth of humans in their surrounding as well as listening to their own sounds and memorizing (muscle memory) which mouth action was needed to do so. Imitating is supervised learning. Humans try to do Reinforcement learning by acknowledging the infant if it did something well and we want them to keep on doing it.\\\\
+\emph{Available example data:} Experience/memory of infant while living its best life.
 
 \section*{Exercise 10.2}
+\textbf{a)} We choose A$_{2}$ as the root of the tree as it is the most important attribute as most of its example entries match the output $\to$ only x$_{3}$ doesn't match. We split on 1 and take A$_{1}$ as our subtree as the leftover examples (x$_{3}$, x$_{4}$, x$_{5}$) are a perfect match from A$_{1}$ and the output. Therefore we stop the tree as when we have reached our Output y.\\\\
+%\includegraphics[scale=•]{•}\\\\
+\textbf{b)} We can calculate the minimal-size of a tree with log$_{2}$(N), where N = number of attributes; in our case N = 3. Therfore the minimum is 2 as $\lceil$log$_{2}$(3)$\rceil$ = 2. (we round up for convenience) The maximum size of the tree is 3 as N=3 and we aren't allowed to reuse the attributes.\\\\
+\emph{Dataset:}\\\\
+\begin{tabular}[h]{c|c|c|c|c}
+Examples & A$_{1}$ & A$_{2}$ & A$_{3}$ & Output y\\
+\hline
+x$_{1}$ & 1 & 0 & 0 & 0\\
+\hline
+x$_{2}$ & 1 & 0 & 1 & 0\\
+\hline
+x$_{3}$ & 0 & 1 & 0 & 0\\
+\hline
+x$_{4}$ & 1 & 1 & 1 & 0\\
+\hline
+x$_{5}$ & 1 & 1 & 0 & 1\\
+\end{tabular}\\\\
+%\includegraphics[scale=•]{•}\\\\
+\textbf{c)} There is no information gain as we have already asked for this information and as we already now the answer/information we have no second information gain when reusing the attribute twice.
 
 
 
